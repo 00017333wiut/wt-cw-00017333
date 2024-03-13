@@ -1,8 +1,8 @@
 const express = require('express')
-const product_router = require('./product')
+const order_router = require('./order')
 
 const router = express.Router()
 
 // registering child routers
-router.use('/product', product_router)
+router.use('/order', order_router)
 module.exports = router
