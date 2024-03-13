@@ -1,1 +1,12 @@
-[]
+[
+    {
+        "id": "asf13rdsf",
+        "ticket": {    
+            "productName": "Apple",
+            "productDateTime": "12/03/2024 19:00",
+            "farm": "Stardew",
+            "contactPhone": "712354440",
+            "price": "21"
+        }
+    }
+]

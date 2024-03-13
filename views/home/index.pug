@@ -8,28 +8,29 @@ body
             th(scope="col") ID
             th(scope="col") Product Name
             th(scope="col") Product DateTime
-            th(scope="col") Venue
+            th(scope="col") Farm
             th(scope="col") Contact Phone
-            th(scope="col") Seat
+            th(scope="col") Price
             th(scope="col") Actions
         tbody
-          tr
-            td 1
-            td Example Product Name 1
-            td 2024-02-17 10:00
-            td Example Venue
-            td +1234567890
-            td 42
-            td
-              button.btn.btn-primary.btn-sm Edit
-              button.btn.btn-danger.btn-sm Delete
-          tr
-            td 1
-            td Example Product Name 2
-            td 2024-02-17 10:00
-            td Example Venue
-            td +1234567890
-            td 42
-            td
-              button.btn.btn-primary.btn-sm Edit
-              button.btn.btn-danger.btn-sm Delete
+script.
+      document.addEventListener('DOMContentLoaded', function() {
+        axios.get('/api/product')
+          .then(function(response) {
+            const products = response.data;
+            const tableBody = document.querySelector('table tbody');
+            products.forEach(t => {
+              const row = document.createElement('tr');
+              const product = t.product
+              row.innerHTML = `
+                <td>${t.id}</td>
+                <td>${product.productName}</td>
+                <td>${product.productDateTime}</td>
+                <td>${product.farm}</td>
+                <td>${product.contactPhone}</td>
+                <td>${product.price}</td>
+                <td>
+                  <button class="btn btn-primary btn-sm">Edit</button>
+                  <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+              ;
