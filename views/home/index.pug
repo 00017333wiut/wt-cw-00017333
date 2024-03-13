@@ -15,7 +15,7 @@ body
         tbody
 script.
       document.addEventListener('DOMContentLoaded', function() {
-        axios.get('/api/product')
+        axios.get('/api/order')
           .then(function(response) {
             const products = response.data;
             const tableBody = document.querySelector('table tbody');
@@ -24,13 +24,16 @@ script.
               const product = t.product
               row.innerHTML = `
                 <td>${t.id}</td>
-                <td>${product.productName}</td>
-                <td>${product.productDateTime}</td>
-                <td>${product.farm}</td>
-                <td>${product.contactPhone}</td>
-                <td>${product.price}</td>
+                <td>${product.order.productName}</td>
+                <td>${product.order.productDateTime}</td>
+                <td>${product.order.farm}</td>
+                <td>${product.order.contactPhone}</td>
+                <td>${product.order.price}</td>
                 <td>
                   <button class="btn btn-primary btn-sm">Edit</button>
                   <button class="btn btn-danger btn-sm">Delete</button>
-                </td>
-              ;
+                </td>;
+                `
+            }
+          }
+      }
