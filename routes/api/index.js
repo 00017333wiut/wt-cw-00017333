@@ -1,8 +1,8 @@
 const express = require('express')
-const ticket_router = require('./ticket')
+const product_router = require('./product')
 
 const router = express.Router()
 
 // registering child routers
-router.use('/ticket', ticket_router)
+router.use('/product', product_router)
 module.exports = router
