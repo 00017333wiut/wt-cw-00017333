@@ -7,22 +7,22 @@ body
           label(for="productName" class="form-label") Product Name
           input(type="text" class="form-control" id="productName" name="productName" required)
         .mb-3
-          label(for="productDateTime" class="form-label") Product Date/Time
+          label(for="productDateTime" class="form-label") Date of Manifacture
           .input-group.date(id="datetimepicker1" data-target-input="nearest")
             input(type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" name="productDateTime" required)
             .input-group-append(data-target="#datetimepicker1" data-toggle="datetimepicker")
               .input-group-text
                 i.fas.fa-calendar-alt
         .mb-3
-          label(for="venue" class="form-label") Venue
-          input(type="text" class="form-control" id="venue" name="venue" required)
+          label(for="farm" class="form-label") Farm
+          input(type="text" class="form-control" id="farm" name="farm" required)
         .mb-3
           label(for="contactPhone" class="form-label") Contact Phone
           input(type="tel" class="form-control" id="contactPhone" name="contactPhone" required)
         .mb-3
-          label(for="seat" class="form-label") Seat
-          input(type="text" class="form-control" id="seat" name="seat" required)
-        button(type="submit" class="btn btn-primary") Add/Edit
+          label(for="price" class="form-label") Price
+          input(type="text" class="form-control" id="price" name="price" required)
+        button(type="submit" class="btn btn-primary") Order
 
     script.
         const picker = new tempusDominus.TempusDominus(document.getElementById('datetimepicker1'),{
